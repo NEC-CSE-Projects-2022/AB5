@@ -1,1 +1,137 @@
+# 🌊 Satellite Images of Water Bodies – Dataset README
 
+## 📌 Overview
+
+This dataset contains satellite images focused on identifying and analyzing water bodies such as rivers, lakes, reservoirs, and oceans. It is useful for tasks like **image segmentation, classification, and environmental monitoring**.
+
+The dataset can be used in domains like:
+
+* Remote sensing
+* Environmental analysis
+* Flood detection systems
+* Water resource management
+
+---
+
+## 📂 Dataset Source
+
+* **Kaggle Link:** https://www.kaggle.com/datasets/franciscoescobar/satellite-images-of-water-bodies
+* **Author:** Francisco Escobar
+
+---
+
+## 📁 Dataset Structure
+
+The dataset is organized into folders containing satellite images. Typical structure:
+
+```
+dataset/
+│── images/
+│   ├── image1.jpg
+│   ├── image2.jpg
+│   └── ...
+│
+│── masks/ (if available)
+│   ├── mask1.png
+│   ├── mask2.png
+│   └── ...
+```
+
+* **Images:** Raw satellite images
+* **Masks (if present):** Ground truth labels for water segmentation
+
+---
+
+## 🧠 Use Cases
+
+* Water body detection using deep learning
+* Image segmentation (U-Net, CNN models)
+* Climate change analysis
+* Geographic Information Systems (GIS)
+* Disaster management (flood prediction)
+
+---
+
+## ⚙️ How to Use
+
+### 1. Download Dataset
+
+* Visit the Kaggle link and download the dataset
+* Or use Kaggle API:
+
+```bash
+kaggle datasets download -d franciscoescobar/satellite-images-of-water-bodies
+```
+
+### 2. Extract Files
+
+```bash
+unzip satellite-images-of-water-bodies.zip
+```
+
+### 3. Load in Python
+
+```python
+import os
+import cv2
+
+image_path = "dataset/images"
+
+for img in os.listdir(image_path):
+    image = cv2.imread(os.path.join(image_path, img))
+    print(image.shape)
+```
+
+---
+
+## 🧪 Suggested Models
+
+* CNN (Convolutional Neural Networks)
+* U-Net (for segmentation)
+* ResNet / EfficientNet (for classification)
+* DeepLabV3+
+
+---
+
+## 📊 Preprocessing Tips
+
+* Resize images (e.g., 224x224 or 256x256)
+* Normalize pixel values
+* Data augmentation (flip, rotate, zoom)
+* Convert masks to binary format (if segmentation task)
+
+---
+
+## ⚠️ Notes
+
+* Ensure proper train-test split
+* Check for class imbalance
+* Verify image quality and labeling (if masks are provided)
+
+---
+
+## 📜 License
+
+Please refer to the Kaggle dataset page for license and usage terms.
+
+---
+
+## 🙌 Acknowledgements
+
+Thanks to the dataset creator for providing valuable satellite imagery data for research and development.
+
+---
+
+## 🚀 Future Improvements
+
+* Add annotations if not present
+* Enhance dataset with more diverse geographical regions
+* Integrate with real-time satellite data
+
+---
+
+## 👨‍💻 Author
+
+Created for academic and project purposes.
+
+---
